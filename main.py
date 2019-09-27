@@ -17,6 +17,7 @@ def showCommands():
     print("Use /delete (name) to delete a previously saved savegame")
     print("Use /list to show previously saved savegames")
     print("Use /help to display this list.")
+    print("Use /sugma :)")
 
 def loadSave(argument):
     if not os.path.exists(cwd + "\\saves\\" + argument):
@@ -102,7 +103,7 @@ while keepGoing:
         print("dick")
         validCommand = True
         
-    if command.startswith("/list"):*
+    if command.startswith("/list"):
         list()
         validCommand = True
         
