@@ -11,8 +11,6 @@ saveLoc = appdataLoc + '\\LocalLow\\Nolla_Games_Noita\\save00'
 
 filesToMove = ("world_state.salakieli","player.salakieli","magic_numbers.salakieli","world")
 
-validCommands = ("save", "load", "delete", "list", "help")
-
 def showCommands():
     print("Use /save (name) to create a new savegame with the current game state")
     print("Use /load (name) to load a previously saved savegame")
@@ -98,27 +96,30 @@ while keepGoing:
 
     if command.startswith("/help"):
         showCommands()
+        validCommand = True
 
-    if command.startswith("/list"):
+    if command.startswith("/sugma"):
+        print("dick")
+        validCommand = True
+        
+    if command.startswith("/list"):*
         list()
-
+        validCommand = True
+        
     if command.startswith("/save"):
         command = command.replace("/save ","")
         saveGame(command)
-
+        validCommand = True
+        
     if command.startswith("/load"):
         command = command.replace("/load ","")
         loadSave(command)
-
+        validCommand = True
+        
     if command.startswith("/delete"):
         command = command.replace("/delete ","")
         deleteSave(command)
-
-    for vc in validCommands:
-        if validCommand:
-            continue
-        if commandCheck.startswith("/" + vc):
-            validCommand = True
-
+        validCommand = True
+        
     if not validCommand:
         print("This command is invalid, try again!")
